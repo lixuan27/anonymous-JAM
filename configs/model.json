@@ -1,0 +1,21 @@
+{
+  "agent": {
+    "action_dim": 80,
+    "state_dim": 80,
+    "chunk": 32,
+    "width": 1024,
+    "layers": 30,
+    "ffn_mult": 4,
+    "consequence_dim": 144,
+    "consequence_steps": 16,
+    "zero_init_heads": true
+  },
+  "objective": {
+    "lambda_world": 1.0,
+    "lambda_action": 1.0,
+    "lambda_consequence": 1.0,
+    "world_shift": 5.0,
+    "action_shift": 5.0,
+    "weighting": "bell"
+  }
+}

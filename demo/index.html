@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self'; script-src 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self' blob:; style-src 'self'; script-src 'self'; connect-src 'self'; font-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="description" content="Anonymous supplementary demo for an ICLR 2027 submission on reciprocal action and world pretraining.">
   <title>JAM · Anonymous ICLR 2027 Demo</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d2638'/%3E%3Cpath d='M14 18h10v21c0 8-4 12-12 12v-8c3 0 4-1 4-4V18zm16 0h8l12 33h-9l-2-7H28l-2 7h-9l13-33zm1 19h6l-3-10-3 10z' fill='%2358b8ad'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <script src="media.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -49,53 +50,58 @@
         <article class="real-task">
           <div class="task-heading"><span>01</span><div><h3>Place bread in the bowl</h3><p>Randomized object and bowl positions test grasping and placement.</p></div></div>
           <div class="comparison-grid">
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/bread-jam-1.jpg"><source src="assets/videos/real/bread-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Centered placement</strong></figcaption></figure>
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/bread-jam-2.jpg"><source src="assets/videos/real/bread-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Shifted initial state</strong></figcaption></figure>
-            <figure class="video-card baseline-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/bread-lingbot.jpg"><source src="assets/videos/real/bread-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/bread-jam-1.jpg"><source src="assets/videos/real/bread-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Centered placement</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/bread-jam-2.jpg"><source src="assets/videos/real/bread-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Shifted initial state</strong></figcaption></figure>
+            <figure class="video-card baseline-card"><video controls muted playsinline preload="none" poster="assets/posters/real/bread-lingbot.jpg"><source src="assets/videos/real/bread-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card baseline-card pi05-card"><video controls muted playsinline preload="none" poster="assets/posters/real/bread-pi05.jpg"><source src="assets/videos/real/bread-pi05.mp4" type="video/mp4"></video><figcaption><span>π₀.₅ baseline · failure</span><strong>Bread remains outside the bowl</strong></figcaption></figure>
           </div>
         </article>
 
         <article class="real-task">
           <div class="task-heading"><span>02</span><div><h3>Place noodle in the pot</h3><p>A narrow pot and flexible geometry demand precise release.</p></div></div>
           <div class="comparison-grid">
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/noodle-jam-1.jpg"><source src="assets/videos/real/noodle-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Clean release</strong></figcaption></figure>
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/noodle-jam-2.jpg"><source src="assets/videos/real/noodle-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Shifted initial state</strong></figcaption></figure>
-            <figure class="video-card baseline-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/noodle-lingbot.jpg"><source src="assets/videos/real/noodle-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/noodle-jam-1.jpg"><source src="assets/videos/real/noodle-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Clean release</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/noodle-jam-2.jpg"><source src="assets/videos/real/noodle-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Shifted initial state</strong></figcaption></figure>
+            <figure class="video-card baseline-card"><video controls muted playsinline preload="none" poster="assets/posters/real/noodle-lingbot.jpg"><source src="assets/videos/real/noodle-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card baseline-card pi05-card"><video controls muted playsinline preload="none" poster="assets/posters/real/noodle-pi05.jpg"><source src="assets/videos/real/noodle-pi05.mp4" type="video/mp4"></video><figcaption><span>π₀.₅ baseline · failure</span><strong>Noodle remains outside the pot</strong></figcaption></figure>
           </div>
         </article>
 
         <article class="real-task">
           <div class="task-heading"><span>03</span><div><h3>Hang the ring on the peg</h3><p>The ring requires accurate pose control before release.</p></div></div>
           <div class="comparison-grid">
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/ring-jam-1.jpg"><source src="assets/videos/real/ring-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Aligned insertion</strong></figcaption></figure>
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/ring-jam-2.jpg"><source src="assets/videos/real/ring-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Offset grasp recovery</strong></figcaption></figure>
-            <figure class="video-card baseline-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/ring-lingbot.jpg"><source src="assets/videos/real/ring-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/ring-jam-1.jpg"><source src="assets/videos/real/ring-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Aligned insertion</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/ring-jam-2.jpg"><source src="assets/videos/real/ring-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Offset grasp recovery</strong></figcaption></figure>
+            <figure class="video-card baseline-card"><video controls muted playsinline preload="none" poster="assets/posters/real/ring-lingbot.jpg"><source src="assets/videos/real/ring-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card baseline-card pi05-card"><video controls muted playsinline preload="none" poster="assets/posters/real/ring-pi05.jpg"><source src="assets/videos/real/ring-pi05.mp4" type="video/mp4"></video><figcaption><span>π₀.₅ baseline · failure</span><strong>Ring remains off the peg</strong></figcaption></figure>
           </div>
         </article>
 
         <article class="real-task">
           <div class="task-heading"><span>04</span><div><h3>Stack three blocks</h3><p>Three placements test long horizon stability.</p></div></div>
           <div class="comparison-grid">
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/stack-jam-1.jpg"><source src="assets/videos/real/stack-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Stable stack</strong></figcaption></figure>
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/stack-jam-2.jpg"><source src="assets/videos/real/stack-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Alternate sequence</strong></figcaption></figure>
-            <figure class="video-card baseline-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/stack-lingbot.jpg"><source src="assets/videos/real/stack-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Incomplete stack</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/stack-jam-1.jpg"><source src="assets/videos/real/stack-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Stable stack</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/stack-jam-2.jpg"><source src="assets/videos/real/stack-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Alternate sequence</strong></figcaption></figure>
+            <figure class="video-card baseline-card"><video controls muted playsinline preload="none" poster="assets/posters/real/stack-lingbot.jpg"><source src="assets/videos/real/stack-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Incomplete stack</strong></figcaption></figure>
+            <figure class="video-card baseline-card pi05-card"><video controls muted playsinline preload="none" poster="assets/posters/real/stack-pi05.jpg"><source src="assets/videos/real/stack-pi05.mp4" type="video/mp4"></video><figcaption><span>π₀.₅ baseline · failure</span><strong>Two blocks stacked</strong></figcaption></figure>
           </div>
         </article>
 
         <article class="real-task">
           <div class="task-heading"><span>05</span><div><h3>Close the grill lid</h3><p>Closing the lid requires sustained contact and force.</p></div></div>
           <div class="comparison-grid">
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/grill-jam-1.jpg"><source src="assets/videos/real/grill-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Continuous contact</strong></figcaption></figure>
-            <figure class="video-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/grill-jam-2.jpg"><source src="assets/videos/real/grill-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Shifted initial pose</strong></figcaption></figure>
-            <figure class="video-card baseline-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/grill-lingbot.jpg"><source src="assets/videos/real/grill-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/grill-jam-1.jpg"><source src="assets/videos/real/grill-jam-1.mp4" type="video/mp4"></video><figcaption><span>JAM success 1</span><strong>Continuous contact</strong></figcaption></figure>
+            <figure class="video-card"><video controls muted playsinline preload="none" poster="assets/posters/real/grill-jam-2.jpg"><source src="assets/videos/real/grill-jam-2.mp4" type="video/mp4"></video><figcaption><span>JAM success 2</span><strong>Shifted initial pose</strong></figcaption></figure>
+            <figure class="video-card baseline-card"><video controls muted playsinline preload="none" poster="assets/posters/real/grill-lingbot.jpg"><source src="assets/videos/real/grill-lingbot.mp4" type="video/mp4"></video><figcaption><span>LingBot VA baseline</span><strong>Matched rollout</strong></figcaption></figure>
+            <figure class="video-card baseline-card pi05-card"><video controls muted playsinline preload="none" poster="assets/posters/real/grill-pi05.jpg"><source src="assets/videos/real/grill-pi05.mp4" type="video/mp4"></video><figcaption><span>π₀.₅ baseline · failure</span><strong>Lid remains open</strong></figcaption></figure>
           </div>
         </article>
 
         <div class="failure-section">
           <div class="failure-copy"><span class="kicker">Failure analysis</span><h2>Terminal precision drives the remaining errors</h2><p>Both rollouts reach the final interaction. One misses the receptacle during release. The other destabilizes a two block stack during the last placement.</p></div>
           <div class="failure-grid">
-            <figure class="video-card failure-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/failure-bread-drop.jpg"><source src="assets/videos/real/failure-bread-drop.mp4" type="video/mp4"></video><figcaption><span>JAM failure</span><strong>Release beside the bowl</strong></figcaption></figure>
-            <figure class="video-card failure-card"><video controls muted playsinline preload="metadata" poster="assets/posters/real/failure-stack-last-step.jpg"><source src="assets/videos/real/failure-stack-last-step.mp4" type="video/mp4"></video><figcaption><span>JAM failure</span><strong>Unstable final placement</strong></figcaption></figure>
+            <figure class="video-card failure-card"><video controls muted playsinline preload="none" poster="assets/posters/real/failure-bread-drop.jpg"><source src="assets/videos/real/failure-bread-drop.mp4" type="video/mp4"></video><figcaption><span>JAM failure</span><strong>Release beside the bowl</strong></figcaption></figure>
+            <figure class="video-card failure-card"><video controls muted playsinline preload="none" poster="assets/posters/real/failure-stack-last-step.jpg"><source src="assets/videos/real/failure-stack-last-step.mp4" type="video/mp4"></video><figcaption><span>JAM failure</span><strong>Unstable final placement</strong></figcaption></figure>
           </div>
         </div>
 
@@ -158,7 +164,7 @@
   </main>
 
   <footer id="privacy">
-    <div><strong>Anonymous review artifact</strong><p>The static artifact serves local media and system fonts. Its security policy blocks analytics and cookies. It also prevents external network requests.</p></div>
+    <div><strong>Anonymous review artifact</strong><p>All media and scripts are bundled with this anonymous artifact. Videos load when selected. The page uses system fonts and contains no analytics or tracking cookies.</p></div>
     <div class="privacy-mark"><span></span> Zero tracking page</div>
   </footer>
 </body>
